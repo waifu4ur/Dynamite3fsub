@@ -54,11 +54,11 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Wait Dude...")
+        temp_msg = await message.reply("ᴡᴀɪᴛ ᴅᴜᴅᴇ...")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("I Feel like there is Something wrong..!")
+            await message.reply_text("ɪ ꜰᴇᴇʟ ʟɪᴋᴇ ᴛʜᴇʀᴇ ɪꜱ ꜱᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ..!🤔")
             return
         await temp_msg.delete()
 
@@ -87,11 +87,11 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
     [
-        InlineKeyboardButton("𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋", url="https://t.me/Its_Tartaglia_Childe"),
+        InlineKeyboardButton("× ʏᴜɢᴇɴ ɴᴇᴛᴡᴏʀᴋ ×", url="https://t.me/YugenNetwork"),
     ],
     [
-                    InlineKeyboardButton("⚠️ About Me Dude ⚠️", callback_data = "about"),
-                    InlineKeyboardButton("✌️ OFF ✌️", callback_data = "close")
+                    InlineKeyboardButton("⚠️ ᴀʙᴏᴜᴛ ⚠️", callback_data = "about"),
+                    InlineKeyboardButton("✌️ ᴄʟᴏꜱᴇ ✌️", callback_data = "close")
         
     ]
             ]
@@ -113,7 +113,7 @@ async def start_command(client: Client, message: Message):
 
 #=====================================================================================##
 
-WAIT_MSG = "<b>Working....</b>"
+WAIT_MSG = "<b>ᴡᴏʀᴋɪɴɢ....</b>"
 
 REPLY_ERROR = "<code>Use this command as a reply to any telegram message without any spaces.</code>"
 
@@ -125,18 +125,18 @@ REPLY_ERROR = "<code>Use this command as a reply to any telegram message without
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="💞 ᴍᴀɪɴ ᴄʜᴀɴᴇʟ 💞", url=client.invitelink),
-            InlineKeyboardButton(text="💞 ꜱᴇᴄᴏɴᴅ ᴄʜᴀɴᴇʟ 💞", url=client.invitelink2),
+            InlineKeyboardButton(text="× ᴍᴀɴɢᴀ ʏᴜɢᴇɴ ×", url=client.invitelink2),
+            InlineKeyboardButton(text="× ᴀɴɪᴍᴀᴛɪᴏɴ ʜᴜʙ ×", url=client.invitelink3),
         ],
         [
-            InlineKeyboardButton(text="💞 ɢʀᴏᴜᴘ ᴄʜᴀᴛ 💞", url=client.invitelink3),
+            InlineKeyboardButton(text="× ʜᴇᴀɴɪᴍᴇ ʜᴜʙ ×", url=client.invitelink),
         ]
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = 'ᴛʀʏ ᴀɢᴀɪɴ',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
@@ -161,7 +161,7 @@ async def not_joined(client: Client, message: Message):
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
-    await msg.edit(f"{len(users)} users are using this bot")
+    await msg.edit(f"{len(users)} ᴜꜱᴇʀꜱ ᴀʀᴇ ᴜꜱɪɴɢ ᴛʜɪꜱ ʙᴏᴛ")
 
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
@@ -174,7 +174,7 @@ async def send_text(client: Bot, message: Message):
         deleted = 0
         unsuccessful = 0
         
-        pls_wait = await message.reply("<i>Broadcast Proccessing Till Wait Dude... </i>")
+        pls_wait = await message.reply("<i>ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴘʀᴏᴄᴇꜱꜱɪɴɢ ᴛɪʟʟ ᴡᴀɪᴛ ᴅᴜᴅᴇ... </i>")
         for chat_id in query:
             try:
                 await broadcast_msg.copy(chat_id)
@@ -194,13 +194,13 @@ async def send_text(client: Bot, message: Message):
                 pass
             total += 1
         
-        status = f"""<b><u>ʙʀᴏᴀᴅᴄᴀꜱᴛ...</u>
+        status = f"""<b><u>ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ᴍʏ ʟᴏʀᴅ!! 👾</u>
 
-Total Users: <code>{total}</code>
-Successful: <code>{successful}</code>
-Blocked Users: <code>{blocked}</code>
-Deleted Accounts: <code>{deleted}</code>
-Unsuccessful: <code>{unsuccessful}</code></b>"""
+ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ: <code>{total}</code>
+ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟ: <code>{successful}</code>
+ʙʟᴏᴄᴋᴇᴅ ᴜꜱᴇʀꜱ: <code>{blocked}</code>
+ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛꜱ: <code>{deleted}</code>
+ᴜɴꜱᴜᴄᴄᴇꜱꜱꜰᴜʟ: <code>{unsuccessful}</code></b></b>"""
         
         return await pls_wait.edit(status)
 
